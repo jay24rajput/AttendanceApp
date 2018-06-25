@@ -1,18 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/linear_view">
 
-    <TextView
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id = "@+id/linearlayout1">
+
+
+
+            <TextView
+                android:id="@+id/subjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:cursorVisible="false"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:padding="16sp"
+                android:text="Subjects"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/subjects_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Subject name"
+                android:inputType="text"
+                android:padding="10sp" />
+
+            <Button
+                android:id="@+id/subjects_add"
+                android:layout_width="46dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:onClick="onClick"
+                android:text="+" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="top|center_vertical"
+            android:orientation="vertical"
+            android:id = "@+id/linearlayout2">
+
+            <TextView
+                android:id="@+id/labs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:padding="16sp"
+                android:text="LABS"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/labs_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Lab name"
+                android:inputType="text"
+                android:padding="10sp" />
+
+            <Button
+                android:id="@+id/labs_add"
+                android:layout_width="46dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:onClick="onClick"
+                android:text="+" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/timetable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is an Attendance App!!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="32sp"
+        android:onClick="timetable"
+        android:padding="8dp"
+        android:text="enter timetable"
+        android:textAllCaps="true"
+        />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
