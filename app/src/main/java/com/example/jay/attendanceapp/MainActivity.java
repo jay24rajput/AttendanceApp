@@ -1,61 +1,58 @@
 package com.example.jay.attendanceapp;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.view.ViewGroup.LayoutParams;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout layout;
-
+    private LinearLayout subjectsLinearLayout;
+    private LinearLayout labsLinearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        subjectsLinearLayout=(LinearLayout)findViewById(R.id.subjects_linear_layout);
+        labsLinearLayout=(LinearLayout)findViewById(R.id.labs_linear_layout);
     }
-    public void add_edittext(){
-        LayoutParams lparams = new ViewGroup.LayoutParams(
-                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        EditText et1=new EditText(this);
-        et1.setLayoutParams(lparams);
-        et1.setText("test");
-        this.layout.addView(et1);
-
-        //layout = findViewById(R.id.linearlayout1);
-        //EditText et = new EditText(this);
-        //et.setHint("Enter Subject Name");
-        //layout.addView(et);
-    }
-    public void add_button(){
-
-        layout = findViewById(R.id.linearlayout1);
-        Button bt = new Button(this);
-        bt.setText('+');
-        layout.addView(bt);
+    public void addSubjectsView(View view)
+    {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View rowView = inflater.inflate(R.layout.subjects_list_items, null);
+        // Add the new row before the add field button.
+        subjectsLinearLayout.addView(rowView, subjectsLinearLayout.getChildCount()-1);
     }
 
-    public void remove_button(){
-        Button bt = findViewById(R.id.subjects_add);
-        layout.removeView(bt);
-    }
-    public void onClick(){
-        remove_button();
-        //add_edittext();
-        //add_button();
-    }
-    public void timetable(View view){
-        
+    public void removeSubjectsView(View view)
+    {
+        subjectsLinearLayout.removeView((View) view.getParent());
     }
 
 
+
+    public void addLabsView(View view)
+    {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View rowView = inflater.inflate(R.layout.labs_list_items, null);
+        // Add the new row before the add field button.
+        labsLinearLayout.addView(rowView, labsLinearLayout.getChildCount()-1);
+    }
+
+    public void removeLabsView(View view)
+    {
+        labsLinearLayout.removeView((View) view.getParent());
+    }
 }

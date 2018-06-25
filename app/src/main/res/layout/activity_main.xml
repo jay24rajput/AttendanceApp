@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <LinearLayout
+        android:id="@+id/linear_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:id="@+id/linear_view">
+        android:orientation="horizontal">
 
 
         <LinearLayout
+            android:id="@+id/subjects_linear_layout"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:id = "@+id/linearlayout1">
-
+            android:orientation="vertical">
 
 
             <TextView
@@ -34,36 +34,31 @@
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/subjects_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Subject name"
-                android:inputType="text"
-                android:padding="10sp" />
+            <include
+                layout="@layout/subjects_list_items"/>
 
             <Button
-                android:id="@+id/subjects_add"
+                android:id="@+id/subjects_add_button"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8sp"
-                android:onClick="onClick"
+                android:onClick="addSubjectsView"
                 android:text="+" />
 
         </LinearLayout>
+
         <View
             android:layout_width="1dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"/>
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
+            android:id="@+id/labs_linear_layout"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="top|center_vertical"
-            android:orientation="vertical"
-            android:id = "@+id/linearlayout2">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/labs"
@@ -77,25 +72,20 @@
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/labs_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Lab name"
-                android:inputType="text"
-                android:padding="10sp" />
+            <include
+                layout="@layout/labs_list_items"/>
 
             <Button
-                android:id="@+id/labs_add"
+                android:id="@+id/labs_add_button"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8sp"
-                android:onClick="onClick"
+                android:onClick="addLabsView"
                 android:text="+" />
 
         </LinearLayout>
     </LinearLayout>
+
 
     <Button
         android:id="@+id/timetable"
@@ -104,10 +94,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="32sp"
-        android:onClick="timetable"
         android:padding="8dp"
         android:text="enter timetable"
-        android:textAllCaps="true"
-        />
+        android:textAllCaps="true" />
 
 </RelativeLayout>
