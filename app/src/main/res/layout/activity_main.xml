@@ -96,6 +96,7 @@
         android:layout_margin="32sp"
         android:padding="8dp"
         android:text="enter timetable"
-        android:textAllCaps="true" />
+        android:textAllCaps="true"
+       android:onClick="startFragmentActivity"/>
 
 </RelativeLayout>

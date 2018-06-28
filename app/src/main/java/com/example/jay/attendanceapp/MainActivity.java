@@ -1,6 +1,7 @@
 package com.example.jay.attendanceapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -54,5 +55,11 @@ public class MainActivity extends AppCompatActivity {
     public void removeLabsView(View view)
     {
         labsLinearLayout.removeView((View) view.getParent());
+    }
+
+    public void startFragmentActivity(View view)
+    {
+        Intent fragmentActivity=new Intent(this,AttendanceRecord.class);
+        startActivity(fragmentActivity);
     }
 }
