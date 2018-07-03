@@ -1,9 +1,12 @@
-package com.example.jay.attendanceapp;
+package com.example.jay.attendanceapp.Activities;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.jay.attendanceapp.Adapters.AttendanceInfoAdapter;
+import com.example.jay.attendanceapp.R;
 
 public class AttendanceRecord extends AppCompatActivity {
 

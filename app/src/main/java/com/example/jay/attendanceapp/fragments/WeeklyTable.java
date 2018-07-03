@@ -1,5 +1,4 @@
-package com.example.jay.attendanceapp;
-
+package com.example.jay.attendanceapp.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,14 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.jay.attendanceapp.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class AttendanceInfo extends Fragment {
+public class WeeklyTable extends Fragment {
 
 
-    public AttendanceInfo() {
+    public WeeklyTable() {
         // Required empty public constructor
     }
 
@@ -23,7 +20,7 @@ public class AttendanceInfo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance_info, container, false);
+        return inflater.inflate(R.layout.fragment_weekly_table, container, false);
     }
 
 }

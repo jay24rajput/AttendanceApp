@@ -1,9 +1,11 @@
-package com.example.jay.attendanceapp;
+package com.example.jay.attendanceapp.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.example.jay.attendanceapp.fragments.AttendanceInfo;
+import com.example.jay.attendanceapp.fragments.WeeklyTable;
 
 public class AttendanceInfoAdapter extends FragmentPagerAdapter {
 
