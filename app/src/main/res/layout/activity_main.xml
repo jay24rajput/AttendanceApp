@@ -12,12 +12,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-
         <LinearLayout
             android:id="@+id/subjects_linear_layout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#ffff00"
             android:orientation="vertical">
 
 
@@ -34,8 +34,9 @@
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
-            <include
-                layout="@layout/subjects_list_items"/>
+
+
+            <include layout="@layout/subjects_list_items" />
 
             <Button
                 android:id="@+id/subjects_add_button"
@@ -47,16 +48,18 @@
 
         </LinearLayout>
 
+
         <View
             android:layout_width="1dp"
-            android:layout_height="wrap_content"
+            android:layout_height="490dp"
             android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:id="@+id/labs_linear_layout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#ff0000"
             android:gravity="top|center_vertical"
             android:orientation="vertical">
 
@@ -72,8 +75,8 @@
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
-            <include
-                layout="@layout/labs_list_items"/>
+
+            <include layout="@layout/labs_list_items" />
 
             <Button
                 android:id="@+id/labs_add_button"
@@ -86,17 +89,5 @@
         </LinearLayout>
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/timetable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="32sp"
-        android:padding="8dp"
-        android:text="enter timetable"
-        android:textAllCaps="true"
-       android:onClick="enterNamesToDatabase"/>
 
 </RelativeLayout>
