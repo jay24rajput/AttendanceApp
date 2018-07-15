@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         mSubjectsDbHelper=new SubjectsDbHelper(this);
         mLabsDbHelper=new LabsDbHelper(this);
-
     }
     public void addSubjectsView(View view)
     {
@@ -102,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
         //String[] labNames=new String[totalLabs];
         SQLiteDatabase subjects_db=mSubjectsDbHelper.getWritableDatabase();
         SQLiteDatabase labs_db=mLabsDbHelper.getWritableDatabase();
+
+        subjects_db.execSQL("delete from "+ SubjectsContract.SubjectsEntry.SUBJECTS_TABLE_NAME);
+        labs_db.execSQL("delete from "+ LabsContract.LabsEntry.LABS_TABLE_NAME);
 
 
 
